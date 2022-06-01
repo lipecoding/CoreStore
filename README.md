@@ -1,18 +1,25 @@
-## Getting Started
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+# CoreStore
 
-## Folder Structure
+Projeto de final de semestre ultilizando Java, foi feita uma loja de jogos com tela de login, painel administrador e sistema de compras.
 
-The workspace contains two folders by default, where:
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+## Features
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+- Registro/Login de usuario
+- Painel administrador
+- Sistema de carrinho
 
-## Dependency Management
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+## Dependencies
+Apenas baixar, criar pasta "lib" dentro da pasta "CoreStore-main" e colocar todas as dependencias dentro da mesma. 
+
+- [JDBC](https://cdn.discordapp.com/attachments/840488145186324500/981401763565432892/mysql-connector-java-5.1.47.jar)
+
+
+## Authors
+
+- [@lipecoding](https://github.com/lipecoding)
+- [@rafaelmanicardi](https://github.com/rafaelmanicardi)
+
