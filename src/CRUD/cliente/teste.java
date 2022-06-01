@@ -37,7 +37,7 @@ public class teste{
         objCliente.setEmail(leitor.next());
 
         System.out.println("Digite sua senha(apenas numeros)");
-        objCliente.setSenha(leitor.nextInt());
+        objCliente.setSenha(leitor.next());
 
         System.out.println("Digite seu telefone");
         objCliente.setTelefone(leitor.next());
