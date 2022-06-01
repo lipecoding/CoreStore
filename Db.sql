@@ -19,33 +19,19 @@
 CREATE DATABASE IF NOT EXISTS `corestore` /*!40100 DEFAULT CHARACTER SET utf8mb4 */;
 USE `corestore`;
 
--- Dumping structure for table corestore.administrador
-CREATE TABLE IF NOT EXISTS `administrador` (
-  `idAdmin` int(3) NOT NULL AUTO_INCREMENT,
-  `endereco` varchar(30) NOT NULL,
-  `cpf` varchar(11) NOT NULL,
-  `cargo` varchar(20) NOT NULL,
-  `senha` int(8) NOT NULL,
-  `email` varchar(60) NOT NULL,
-  `idade` int(2) NOT NULL,
-  `telefone` int(11) DEFAULT NULL,
-  PRIMARY KEY (`idAdmin`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- Data exporting was unselected.
-
 -- Dumping structure for table corestore.cliente
 CREATE TABLE IF NOT EXISTS `cliente` (
   `idCliente` int(5) NOT NULL AUTO_INCREMENT,
+  `email` varchar(60) NOT NULL,
+  `senha` varchar(6) NOT NULL,
   `nome` varchar(15) NOT NULL,
   `sobrenome` varchar(35) NOT NULL,
   `endereco` varchar(45) NOT NULL,
   `cpf` varchar(11) NOT NULL,
-  `email` varchar(60) NOT NULL,
-  `senha` int(11) NOT NULL,
   `idade` int(2) NOT NULL,
   `telefone` varchar(11) NOT NULL,
   `cep` varchar(8) NOT NULL,
+  `admin` enum('0','1') NOT NULL DEFAULT '0',
   PRIMARY KEY (`idCliente`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
