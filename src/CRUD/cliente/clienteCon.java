@@ -2,6 +2,8 @@ package CRUD.cliente;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 import dao.Conexao;
 
@@ -24,15 +26,61 @@ public class clienteCon {
             pstm.setString(3, objCliente.getEndereco());
             pstm.setString(4, objCliente.getCpf());
             pstm.setString(5, objCliente.getEmail());
-            pstm.setInt(6, objCliente.getSenha());
+            pstm.setString(6, objCliente.getSenha());
             pstm.setInt(7, objCliente.getIdade());
             pstm.setString(8, objCliente.getTelefone());
             pstm.setString(9, objCliente.getCep());
             pstm.execute();
             pstm.close();
 
-        } catch (Exception e) {
+        } catch (SQLException e) {
             System.out.println("Erro de clienteCon: " + e.getMessage());
         }
     }
+
+    public ResultSet loginCliente(Cliente objCliente) {
+        con = new Conexao().conDB();
+
+        try {
+
+            String sql = "select * from cliente where nome = ? and senha = ?";
+            
+            pstm = con.prepareStatement(sql);
+            pstm.setString(1, objCliente.getEmail());
+            pstm.setString(2, objCliente.getSenha());
+
+            ResultSet rSet = pstm.executeQuery();
+
+            return rSet;
+
+        } catch (SQLException e) {
+            
+            System.out.println("Falha no login:" + e.getMessage());
+            return null;
+        }
+    }
+    public ResultSet adminCliente(Cliente objCliente) {
+        con = new Conexao().conDB();
+
+        try {
+
+            String adm = "select * from cliente where nome = ? and senha = ? and admin = 1";
+            
+            pstm = con.prepareStatement(adm);
+            pstm.setString(1, objCliente.getEmail());
+            pstm.setString(2, objCliente.getSenha());
+
+            ResultSet rSet = pstm.executeQuery();
+
+            return rSet;
+
+        } catch (Exception e) {
+
+            System.out.println("ERRO adminCliente: " + e.getMessage());
+            return null;
+
+        }
+    }
+
 }
+
