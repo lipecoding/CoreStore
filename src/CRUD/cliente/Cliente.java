@@ -1,8 +1,8 @@
 package CRUD.cliente;
 
 public class Cliente{
-    private String nome, sobrenome, endereco, email, cpf;
-    private int idade, senha;
+    private String nome, sobrenome, endereco, email, cpf, senha;
+    private int idade;
     public String telefone, cep;
 
     public void setNome(String nome){
@@ -33,10 +33,10 @@ public class Cliente{
         return this.email;
     }
 
-    public void setSenha(int senha){
+    public void setSenha(String senha){
         this.senha = senha;
     }
-    public int getSenha(){
+    public String getSenha(){
         return this.senha;
     }
 
