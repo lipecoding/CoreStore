@@ -43,7 +43,7 @@ public class clienteCon {
 
         try {
 
-            String sql = "select * from cliente where nome = ? and senha = ?";
+            String sql = "select * from cliente where email = ? and senha = ?";
             
             pstm = con.prepareStatement(sql);
             pstm.setString(1, objCliente.getEmail());
@@ -64,15 +64,15 @@ public class clienteCon {
 
         try {
 
-            String adm = "select * from cliente where nome = ? and senha = ? and admin = 1";
+            String adm = "select * from cliente where email = ? and senha = ? and admin = 1";
             
             pstm = con.prepareStatement(adm);
             pstm.setString(1, objCliente.getEmail());
             pstm.setString(2, objCliente.getSenha());
 
-            ResultSet rSet = pstm.executeQuery();
+            ResultSet aSet = pstm.executeQuery();
 
-            return rSet;
+            return aSet;
 
         } catch (Exception e) {
 
