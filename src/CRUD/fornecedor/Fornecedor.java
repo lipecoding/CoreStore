@@ -1,11 +1,7 @@
 package CRUD.fornecedor;
 
-import java.math.BigInteger;
-
 public class Fornecedor {
-    private String razaoSocial, nomeFantasia;
-    private String endereco, cnpj;
-    private BigInteger cep, telefone;
+    private String razaoSocial, nomeFantasia, endereco, cnpj, cep, telefone;
     private int codigoBanco, agencia, digitoAgencia, numeroConta, digitoConta;
 
     public void setRazaoSocial(String razaoSocial){
@@ -34,17 +30,17 @@ public class Fornecedor {
         return this.endereco;
     }
 
-    public void setCep(BigInteger cep){
+    public void setCep(String cep){
         this.cep = cep;
     }
-    public BigInteger getCep(){
+    public String getCep(){
         return cep;
     }
 
-    public void setTelefone(BigInteger telefone){
+    public void setTelefone(String telefone){
         this.telefone = telefone;
     }
-    public BigInteger getTelefone(){
+    public String getTelefone(){
         return this.telefone;
     }
 
