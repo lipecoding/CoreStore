@@ -9,12 +9,10 @@ import dao.Conexao;
 
 public class clienteCon {
 
-    Connection con;
+    Connection con = new Conexao().conDB();
     PreparedStatement pstm;
 
     public void cadastroCliente(Cliente objCliente) {
-
-        con = new Conexao().conDB();
 
         String sql = "insert into cliente (nome,sobrenome,endereco,cpf,email,senha,idade,telefone,cep) values (?,?,?,?,?,?,?,?,?)";
 
@@ -39,7 +37,6 @@ public class clienteCon {
     }
 
     public ResultSet loginCliente(Cliente objCliente) {
-        con = new Conexao().conDB();
 
         try {
 
@@ -60,7 +57,6 @@ public class clienteCon {
         }
     }
     public ResultSet adminCliente(Cliente objCliente) {
-        con = new Conexao().conDB();
 
         try {
 

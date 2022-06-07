@@ -31,7 +31,7 @@ CREATE TABLE IF NOT EXISTS `cliente` (
   `idade` int(2) NOT NULL,
   `telefone` varchar(11) NOT NULL,
   `cep` varchar(8) NOT NULL,
-  `admin` enum('0','1') NOT NULL DEFAULT '0',
+  `admin` int(1) NOT NULL DEFAULT 0,
   PRIMARY KEY (`idCliente`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -44,7 +44,8 @@ CREATE TABLE IF NOT EXISTS `fornecedor` (
   `razaoSocial` varchar(30) NOT NULL,
   `nomeFantasia` varchar(25) DEFAULT NULL,
   `endereco` varchar(30) NOT NULL,
-  `telefone` int(11) NOT NULL,
+  `telefone` varchar(11) NOT NULL,
+  `cep` varchar(11) NOT NULL,
   `codigoBanco` int(3) NOT NULL,
   `agencia` int(4) NOT NULL,
   `digitoAgencia` int(1) DEFAULT NULL,
