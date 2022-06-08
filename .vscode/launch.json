@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Login",
+            "request": "launch",
+            "mainClass": "view.Login",
+            "projectName": "CoreStore_cf7dd26"
+        },
+        {
+            "type": "java",
+            "name": "Launch teste",
+            "request": "launch",
+            "mainClass": "CRUD.fornecedor.teste",
+            "projectName": "CoreStore_cf7dd26"
+        },
+        {
+            "type": "java",
             "name": "Launch Current File",
             "request": "launch",
             "mainClass": "${file}"

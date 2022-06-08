@@ -1,6 +1,6 @@
-package CRUD.cliente;
+package dto;
 
-public class Cliente{
+public class Usuario{
     private String nome, sobrenome, endereco, email, cpf, senha;
     private int idade;
     public String telefone, cep;

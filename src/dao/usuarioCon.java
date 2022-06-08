@@ -1,4 +1,4 @@
-package CRUD.cliente;
+package dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -7,27 +7,27 @@ import java.sql.SQLException;
 
 import dao.Conexao;
 
-public class clienteCon {
+public class usuarioCon {
 
     Connection con = new Conexao().conDB();
     PreparedStatement pstm;
 
-    public void cadastroCliente(Cliente objCliente) {
+    public void cadastroCliente(dto.Usuario objUsuario) {
 
         String sql = "insert into cliente (nome,sobrenome,endereco,cpf,email,senha,idade,telefone,cep) values (?,?,?,?,?,?,?,?,?)";
 
         try {
             
             pstm = con.prepareStatement(sql);
-            pstm.setString(1, objCliente.getNome());
-            pstm.setString(2, objCliente.getSobrenome());
-            pstm.setString(3, objCliente.getEndereco());
-            pstm.setString(4, objCliente.getCpf());
-            pstm.setString(5, objCliente.getEmail());
-            pstm.setString(6, objCliente.getSenha());
-            pstm.setInt(7, objCliente.getIdade());
-            pstm.setString(8, objCliente.getTelefone());
-            pstm.setString(9, objCliente.getCep());
+            pstm.setString(1, objUsuario.getNome());
+            pstm.setString(2, objUsuario.getSobrenome());
+            pstm.setString(3, objUsuario.getEndereco());
+            pstm.setString(4, objUsuario.getCpf());
+            pstm.setString(5, objUsuario.getEmail());
+            pstm.setString(6, objUsuario.getSenha());
+            pstm.setInt(7, objUsuario.getIdade());
+            pstm.setString(8, objUsuario.getTelefone());
+            pstm.setString(9, objUsuario.getCep());
             pstm.execute();
             pstm.close();
 
@@ -36,15 +36,15 @@ public class clienteCon {
         }
     }
 
-    public ResultSet loginCliente(Cliente objCliente) {
+    public ResultSet loginCliente(dto.Usuario objUsuario) {
 
         try {
 
             String sql = "select * from cliente where email = ? and senha = ?";
             
             pstm = con.prepareStatement(sql);
-            pstm.setString(1, objCliente.getEmail());
-            pstm.setString(2, objCliente.getSenha());
+            pstm.setString(1, objUsuario.getEmail());
+            pstm.setString(2, objUsuario.getSenha());
 
             ResultSet rSet = pstm.executeQuery();
 
@@ -56,15 +56,15 @@ public class clienteCon {
             return null;
         }
     }
-    public ResultSet adminCliente(Cliente objCliente) {
+    public ResultSet adminCliente(dto.Usuario objUsuario) {
 
         try {
 
             String adm = "select * from cliente where email = ? and senha = ? and admin = 1";
             
             pstm = con.prepareStatement(adm);
-            pstm.setString(1, objCliente.getEmail());
-            pstm.setString(2, objCliente.getSenha());
+            pstm.setString(1, objUsuario.getEmail());
+            pstm.setString(2, objUsuario.getSenha());
 
             ResultSet aSet = pstm.executeQuery();
 

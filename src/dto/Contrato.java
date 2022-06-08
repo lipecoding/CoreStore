@@ -1,4 +1,4 @@
-package CRUD.contrato;
+package dto;
 
 public class Contrato {
     private boolean aceite;
@@ -12,8 +12,9 @@ public class Contrato {
     }
     public boolean aceite(String aceite){
         if (aceite.equals("OK")){
-        return true;
-        }else
-        return false;
+            return true;
+        } else {
+            return false;
+        }
     }
 }

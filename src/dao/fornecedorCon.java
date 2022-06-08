@@ -1,4 +1,4 @@
-package CRUD.fornecedor;
+package dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -11,9 +11,9 @@ public class fornecedorCon {
     Connection con = new Conexao().conDB();
     PreparedStatement pstm;
 
-    public void cadastroFornecedor(Fornecedor objFornecedor) {
+    public void cadastroFornecedor(dto.Fornecedor objFornecedor) {
         try {
-            String set = "insert into fornecedor (CNPJ, razaoSocial, nomeFantasia, endereco, telefone, codigoBanco, agencia, digitoAgencia, numeroConta, digitoConta) values (?,?,?,?,?,?,?,?,?,?)";
+            String set = "insert into fornecedor (CNPJ, razaoSocial, nomeFantasia, endereco, telefone, codigoBanco, agencia, digitoAgencia, numeroConta, digitoConta, cep) values (?,?,?,?,?,?,?,?,?,?,?)";
 
             pstm = con.prepareStatement(set);
 
@@ -27,6 +27,7 @@ public class fornecedorCon {
             pstm.setInt(8, objFornecedor.getDigitoAgencia());
             pstm.setInt(9, objFornecedor.getNumeroConta());
             pstm.setInt(10, objFornecedor.getDigitoConta());
+            pstm.setString(11, objFornecedor.getCep());
 
             pstm.execute();
             pstm.close();

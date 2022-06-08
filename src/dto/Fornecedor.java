@@ -1,4 +1,4 @@
-package CRUD.fornecedor;
+package dto;
 
 public class Fornecedor {
     private String razaoSocial, nomeFantasia, endereco, cnpj, cep, telefone;

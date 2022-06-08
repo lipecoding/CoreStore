@@ -1,4 +1,4 @@
-package CRUD.produto;
+package dto;
 
 public class Produto {
     private String nome;
