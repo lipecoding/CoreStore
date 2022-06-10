@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
+import javax.swing.JOptionPane;
 
 import dao.Conexao;
 
@@ -33,7 +34,7 @@ public class fornecedorCon {
             pstm.close();
 
         } catch (SQLException err) {
-            System.out.println("Cadastrofornecedor: " + err);
+            JOptionPane.showMessageDialog(null, "Cadastrofornecedor: " + err.getMessage());
         }
     }
 

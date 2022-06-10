@@ -5,6 +5,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import javax.swing.JOptionPane;
+
 import dao.Conexao;
 
 public class usuarioCon {
@@ -32,7 +34,7 @@ public class usuarioCon {
             pstm.close();
 
         } catch (SQLException e) {
-            System.out.println("Erro de clienteCon: " + e.getMessage());
+            JOptionPane.showMessageDialog(null, "Erro de clienteCon: " + e.getMessage());
         }
     }
 
@@ -52,13 +54,14 @@ public class usuarioCon {
 
         } catch (SQLException e) {
             
-            System.out.println("Falha no login:" + e.getMessage());
+            JOptionPane.showMessageDialog(null, "Falha no login:" + e.getMessage());
             return null;
         }
     }
     public ResultSet adminCliente(dto.Usuario objUsuario) {
 
         try {
+
 
             String adm = "select * from cliente where email = ? and senha = ? and admin = 1";
             
@@ -70,9 +73,9 @@ public class usuarioCon {
 
             return aSet;
 
-        } catch (Exception e) {
+        } catch (SQLException e) {
 
-            System.out.println("ERRO adminCliente: " + e.getMessage());
+            JOptionPane.showMessageDialog(null, "ERRO adminCliente: " + e.getMessage());
             return null;
 
         }
