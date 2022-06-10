@@ -1,9 +1,16 @@
 package dto;
 
 public class Usuario{
-    private String nome, sobrenome, endereco, email, cpf, senha;
+    
+    private String nome, sobrenome, endereco, email, cpf, senha, telefone, cep, cargo;
+
+    public String getCargo() {
+        return cargo;
+    }
+    public void setCargo(String cargo) {
+        this.cargo = cargo;
+    }
     private int idade;
-    public String telefone, cep;
 
     public void setNome(String nome){
         this.nome = nome;
