@@ -6,6 +6,8 @@ import java.sql.SQLException;
 
 import javax.swing.JOptionPane;
 
+import dto.Usuario;
+
 public class Login extends javax.swing.JFrame {
 
     dto.Usuario user = new dto.Usuario();
@@ -118,7 +120,7 @@ public class Login extends javax.swing.JFrame {
 
         pack();
         setLocationRelativeTo(null);
-    }// </editor-fold>//GEN-END:initComponents
+    }
 
     private void cadastroActionPerformed(java.awt.event.ActionEvent evt) {
         view.Cadastro cadastro = new view.Cadastro();
@@ -130,6 +132,8 @@ public class Login extends javax.swing.JFrame {
     private void lognActionPerformed(java.awt.event.ActionEvent evt) {
         user.setEmail(email.getText());
         user.setSenha(senha.getText());
+        Principal main = new Principal();
+
 
         try {
             dao.usuarioCon objUsuarioCon = new dao.usuarioCon();
@@ -138,11 +142,15 @@ public class Login extends javax.swing.JFrame {
             ResultSet aSet = objUsuarioCon.adminCliente(user);
 
             if(rSet.next()) {
-                //setar pagina inicial
                 JOptionPane.showMessageDialog(null, "Logado com sucesso!");
                 if (aSet.next()) {
                     JOptionPane.showMessageDialog(null, "Login como adm!");
+
+                    user.setCargo("Sim");
                 }
+                user.setCargo("Não");
+                main.setVisible(true);
+                dispose();
             } else {
                 JOptionPane.showMessageDialog(null, "Email/Senha incorretos!");
             }
@@ -150,17 +158,16 @@ public class Login extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Login View:" + err);
         }
 
+        if (user.getCargo().equals("Sim")) {
+            main.btnAdmin.setVisible(true);
+        } else if(user.getCargo().equals("Não")) {
+            main.btnAdmin.setVisible(false);
+        }
+
     }
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
+
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -177,9 +184,7 @@ public class Login extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
 
-        /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Login().setVisible(true);
@@ -187,7 +192,6 @@ public class Login extends javax.swing.JFrame {
         });
     }
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton cadastro;
     private javax.swing.JTextField email;
     private javax.swing.JLabel jLabel1;
@@ -196,5 +200,5 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton logn;
     private javax.swing.JPasswordField senha;
-    // End of variables declaration//GEN-END:variables
+
 }
