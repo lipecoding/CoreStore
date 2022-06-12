@@ -22,4 +22,5 @@ Apenas baixar, criar pasta "lib" dentro da pasta "CoreStore-main" e colocar toda
 
 - [@lipecoding](https://github.com/lipecoding)
 - [@rafaelmanicardi](https://github.com/rafaelmanicardi)
+- [@nathan-arj](https://github.com/nathan-arj)
 
