@@ -6,6 +6,118 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch RelatorioVenda",
+            "request": "launch",
+            "mainClass": "view.RelatorioVenda",
+            "projectName": "CoreStore_efad862c"
+        },
+        {
+            "type": "java",
+            "name": "Launch GerenciarUsuario",
+            "request": "launch",
+            "mainClass": "view.GerenciarUsuario",
+            "projectName": "CoreStore_efad862c"
+        },
+        {
+            "type": "java",
+            "name": "Launch GerenciarCliente",
+            "request": "launch",
+            "mainClass": "view.GerenciarCliente",
+            "projectName": "CoreStore_efad862c"
+        },
+        {
+            "type": "java",
+            "name": "Launch Principal2",
+            "request": "launch",
+            "mainClass": "view.Principal2",
+            "projectName": "CoreStore_efad862c"
+        },
+        {
+            "type": "java",
+            "name": "Launch Pagamento",
+            "request": "launch",
+            "mainClass": "view.Pagamento",
+            "projectName": "CoreStore_efad862c"
+        },
+        {
+            "type": "java",
+            "name": "Launch Carrinho",
+            "request": "launch",
+            "mainClass": "view.Carrinho",
+            "projectName": "CoreStore_efad862c"
+        },
+        {
+            "type": "java",
+            "name": "Launch RelatorioCompra",
+            "request": "launch",
+            "mainClass": "view.RelatorioCompra",
+            "projectName": "CoreStore_efad862c"
+        },
+        {
+            "type": "java",
+            "name": "Launch AmbienteVendas",
+            "request": "launch",
+            "mainClass": "view.AmbienteVendas",
+            "projectName": "CoreStore_efad862c"
+        },
+        {
+            "type": "java",
+            "name": "Launch CadastroContrato",
+            "request": "launch",
+            "mainClass": "view.CadastroContrato",
+            "projectName": "CoreStore_efad862c"
+        },
+        {
+            "type": "java",
+            "name": "Launch SelecaoRelatorios",
+            "request": "launch",
+            "mainClass": "view.SelecaoRelatorios",
+            "projectName": "CoreStore_efad862c"
+        },
+        {
+            "type": "java",
+            "name": "Launch CadastroCliente",
+            "request": "launch",
+            "mainClass": "view.CadastroCliente",
+            "projectName": "CoreStore_efad862c"
+        },
+        {
+            "type": "java",
+            "name": "Launch CadastroFornecedor",
+            "request": "launch",
+            "mainClass": "view.CadastroFornecedor",
+            "projectName": "CoreStore_efad862c"
+        },
+        {
+            "type": "java",
+            "name": "Launch TelaAdmin",
+            "request": "launch",
+            "mainClass": "view.TelaAdmin",
+            "projectName": "CoreStore_efad862c"
+        },
+        {
+            "type": "java",
+            "name": "Launch CadastroProduto",
+            "request": "launch",
+            "mainClass": "view.CadastroProduto",
+            "projectName": "CoreStore_efad862c"
+        },
+        {
+            "type": "java",
+            "name": "Launch Principal",
+            "request": "launch",
+            "mainClass": "view.Principal",
+            "projectName": "CoreStore_efad862c"
+        },
+        {
+            "type": "java",
+            "name": "Launch Login",
+            "request": "launch",
+            "mainClass": "view.Login",
+            "projectName": "CoreStore_efad862c"
+        },
+        {
+            "type": "java",
             "name": "Launch Principal",
             "request": "launch",
             "mainClass": "view.Principal",

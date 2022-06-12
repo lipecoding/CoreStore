@@ -31,12 +31,12 @@ public class Login extends javax.swing.JFrame {
         logn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setBackground(new java.awt.Color(28, 28, 28));
+        setBackground(new java.awt.Color(255, 255, 255));
 
-        jPanel1.setBackground(new java.awt.Color(26, 26, 26));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        email.setBackground(new java.awt.Color(28, 28, 28));
-        email.setBorder(null);
+        email.setBackground(new java.awt.Color(255, 255, 255));
+     
 
         jLabel1.setText("Email:");
 
@@ -44,19 +44,19 @@ public class Login extends javax.swing.JFrame {
 
         jLabel3.setText("Senha:");
 
-        senha.setBackground(new java.awt.Color(28, 28, 28));
-        senha.setBorder(null);
+        senha.setBackground(new java.awt.Color(255, 255, 255));
+       
 
-        cadastro.setBackground(new java.awt.Color(28, 28, 28));
+        cadastro.setBackground(new java.awt.Color(242, 242, 242));
         cadastro.setText("Cadastro");
-        cadastro.setBorder(null);
+    
         cadastro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cadastroActionPerformed(evt);
             }
         });
 
-        logn.setBackground(new java.awt.Color(28, 28, 28));
+        logn.setBackground(new java.awt.Color(242, 242, 242));
         logn.setText("Login");
         logn.setBorder(null);
         logn.addActionListener(new java.awt.event.ActionListener() {
@@ -123,7 +123,7 @@ public class Login extends javax.swing.JFrame {
     }
 
     private void cadastroActionPerformed(java.awt.event.ActionEvent evt) {
-        view.Cadastro cadastro = new view.Cadastro();
+        view.CadastroCliente cadastro = new CadastroCliente();
         cadastro.setVisible(true);
 
         dispose();
@@ -138,8 +138,8 @@ public class Login extends javax.swing.JFrame {
         try {
             dao.usuarioCon objUsuarioCon = new dao.usuarioCon();
 
-            ResultSet rSet = objUsuarioCon.loginCliente(user);
-            ResultSet aSet = objUsuarioCon.adminCliente(user);
+            ResultSet rSet = objUsuarioCon.loginUsuario(user);
+            ResultSet aSet = objUsuarioCon.adminUsuario(user);
 
             if(rSet.next()) {
                 JOptionPane.showMessageDialog(null, "Logado com sucesso!");

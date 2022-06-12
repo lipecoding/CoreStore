@@ -14,9 +14,9 @@ public class usuarioCon {
     Connection con = new Conexao().conDB();
     PreparedStatement pstm;
 
-    public void cadastroCliente(dto.Usuario objUsuario) {
+    public void cadastroUsuario(dto.Usuario objUsuario) {
 
-        String sql = "insert into cliente (nome,sobrenome,endereco,cpf,email,senha,idade,telefone,cep) values (?,?,?,?,?,?,?,?,?)";
+        String sql = "insert into usuario (nome,sobrenome,endereco,cpf,email,senha,idade,telefone,cep) values (?,?,?,?,?,?,?,?,?)";
 
         try {
             
@@ -34,15 +34,15 @@ public class usuarioCon {
             pstm.close();
 
         } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Erro de clienteCon: " + e.getMessage());
+            JOptionPane.showMessageDialog(null, "Erro de usuarioCon: " + e.getMessage());
         }
     }
 
-    public ResultSet loginCliente(dto.Usuario objUsuario) {
+    public ResultSet loginUsuario(dto.Usuario objUsuario) {
 
         try {
 
-            String sql = "select * from cliente where email = ? and senha = ?";
+            String sql = "select * from usuario where email = ? and senha = ?";
             
             pstm = con.prepareStatement(sql);
             pstm.setString(1, objUsuario.getEmail());
@@ -58,12 +58,12 @@ public class usuarioCon {
             return null;
         }
     }
-    public ResultSet adminCliente(dto.Usuario objUsuario) {
+    public ResultSet adminUsuario(dto.Usuario objUsuario) {
 
         try {
 
 
-            String adm = "select * from cliente where email = ? and senha = ? and admin = 1";
+            String adm = "select * from usuario where email = ? and senha = ? and admin = 1";
             
             pstm = con.prepareStatement(adm);
             pstm.setString(1, objUsuario.getEmail());
@@ -75,7 +75,7 @@ public class usuarioCon {
 
         } catch (SQLException e) {
 
-            JOptionPane.showMessageDialog(null, "ERRO adminCliente: " + e.getMessage());
+            JOptionPane.showMessageDialog(null, "ERRO adminUsuario: " + e.getMessage());
             return null;
 
         }

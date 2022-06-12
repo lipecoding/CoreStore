@@ -12,7 +12,7 @@ public class Conexao {
         Connection con = null;
 
         try {
-            String url = "jdbc:mysql://localhost:3306/corestore?user=root&password=";
+            String url = "jdbc:mysql://localhost:3306/corestore?user=root&password=root";
             con = DriverManager.getConnection(url);
         } catch (SQLException err) {
             JOptionPane.showMessageDialog(null, "Erro de conexão: " + err.getMessage());

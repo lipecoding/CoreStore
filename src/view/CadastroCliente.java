@@ -4,10 +4,10 @@ package view;
 import javax.swing.JOptionPane;
 
 
-public class Cadastro extends javax.swing.JFrame {
+public class CadastroCliente extends javax.swing.JFrame {
 
 
-    public Cadastro() {
+    public CadastroCliente() {
         initComponents();
     }
 
@@ -41,7 +41,7 @@ public class Cadastro extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        Cadastro.setBackground(new java.awt.Color(28, 28, 28));
+        Cadastro.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel1.setText("Cadastro");
 
@@ -49,24 +49,21 @@ public class Cadastro extends javax.swing.JFrame {
 
         jLabel5.setText("Sobrenome:");
 
-        sobrenome.setBackground(new java.awt.Color(26, 26, 26));
-        sobrenome.setBorder(null);
+        sobrenome.setBackground(new java.awt.Color(255, 255, 255));
         sobrenome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 sobrenomeActionPerformed(evt);
             }
         });
 
-        email.setBackground(new java.awt.Color(26, 26, 26));
-        email.setBorder(null);
+        email.setBackground(new java.awt.Color(255, 255, 255));
         email.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 emailActionPerformed(evt);
             }
         });
 
-        nome.setBackground(new java.awt.Color(26, 26, 26));
-        nome.setBorder(null);
+        nome.setBackground(new java.awt.Color(255, 255, 255));
         nome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nomeActionPerformed(evt);
@@ -77,8 +74,7 @@ public class Cadastro extends javax.swing.JFrame {
 
         jLabel7.setText("CPF:");
 
-        cpf.setBackground(new java.awt.Color(26, 26, 26));
-        cpf.setBorder(null);
+        cpf.setBackground(new java.awt.Color(255, 255, 255));
         cpf.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cpfActionPerformed(evt);
@@ -87,8 +83,7 @@ public class Cadastro extends javax.swing.JFrame {
 
         jLabel8.setText("Idade:");
 
-        idade.setBackground(new java.awt.Color(26, 26, 26));
-        idade.setBorder(null);
+        idade.setBackground(new java.awt.Color(255, 255, 255));
         idade.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 idadeActionPerformed(evt);
@@ -97,8 +92,7 @@ public class Cadastro extends javax.swing.JFrame {
 
         jLabel9.setText("CEP:");
 
-        cep.setBackground(new java.awt.Color(26, 26, 26));
-        cep.setBorder(null);
+        cep.setBackground(new java.awt.Color(255, 255, 255));
         cep.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cepActionPerformed(evt);
@@ -107,8 +101,7 @@ public class Cadastro extends javax.swing.JFrame {
 
         jLabel10.setText("Email:");
 
-        endereco.setBackground(new java.awt.Color(26, 26, 26));
-        endereco.setBorder(null);
+        endereco.setBackground(new java.awt.Color(255, 255, 255));
         endereco.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 enderecoActionPerformed(evt);
@@ -117,20 +110,18 @@ public class Cadastro extends javax.swing.JFrame {
 
         jLabel11.setText("Senha:");
 
-        senha.setBackground(new java.awt.Color(26, 26, 26));
-        senha.setBorder(null);
+        senha.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel12.setText("Telefone:");
 
-        telefone.setBackground(new java.awt.Color(26, 26, 26));
-        telefone.setBorder(null);
+        telefone.setBackground(new java.awt.Color(255, 255, 255));
         telefone.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 telefoneActionPerformed(evt);
             }
         });
 
-        cadastrar.setBackground(new java.awt.Color(26, 26, 26));
+        cadastrar.setBackground(new java.awt.Color(255, 255, 255));
         cadastrar.setText("Cadastrar");
         cadastrar.setBorder(null);
         cadastrar.addActionListener(new java.awt.event.ActionListener() {
@@ -139,7 +130,7 @@ public class Cadastro extends javax.swing.JFrame {
             }
         });
 
-        cancelar.setBackground(new java.awt.Color(26, 26, 26));
+        cancelar.setBackground(new java.awt.Color(255, 255, 255));
         cancelar.setText("Cancelar");
         cancelar.setBorder(null);
         cancelar.addActionListener(new java.awt.event.ActionListener() {
@@ -299,7 +290,7 @@ public class Cadastro extends javax.swing.JFrame {
         objUsuario.setIdade(Integer.parseInt(idade.getText()));
         objUsuario.setTelefone(telefone.getText());
 
-        objUsuarioCon.cadastroCliente(objUsuario);
+        objUsuarioCon.cadastroUsuario(objUsuario);
 
         view.Login objLogin = new view.Login();
 
@@ -321,18 +312,18 @@ public class Cadastro extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Cadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CadastroCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Cadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CadastroCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Cadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CadastroCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Cadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CadastroCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
 
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Cadastro().setVisible(true);
+                new CadastroCliente().setVisible(true);
             }
         });
     }

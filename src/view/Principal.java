@@ -38,7 +38,7 @@ public class Principal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel2.setBackground(new java.awt.Color(28, 28, 28));
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -51,26 +51,26 @@ public class Principal extends javax.swing.JFrame {
             .addGap(0, 278, Short.MAX_VALUE)
         );
 
-        btnHome.setBackground(new java.awt.Color(26, 26, 26));
+        btnHome.setBackground(new java.awt.Color(255, 255, 255));
         btnHome.setText("Home");
-        btnHome.setBorder(null);
+
         btnHome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnHomeActionPerformed(evt);
             }
         });
 
-        btnPerfil.setBackground(new java.awt.Color(26, 26, 26));
+        btnPerfil.setBackground(new java.awt.Color(255, 255, 255));
         btnPerfil.setText("Perfil");
-        btnPerfil.setBorder(null);
 
-        btnJogos.setBackground(new java.awt.Color(26, 26, 26));
+
+        btnJogos.setBackground(new java.awt.Color(255, 255, 255));
         btnJogos.setText("Jogos");
-        btnJogos.setBorder(null);
 
-        btnAdmin.setBackground(new java.awt.Color(26, 26, 26));
+
+        btnAdmin.setBackground(new java.awt.Color(255, 255, 255));
         btnAdmin.setText("Admin");
-        btnAdmin.setBorder(null);
+
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
